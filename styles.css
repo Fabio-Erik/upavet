@@ -1,0 +1,1018 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container padrão */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header fixo */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    color: #1e2b20;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+.logo img {
+    height: 80px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #1e2b20;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    color: #FFD700;
+    animation: pulse 1s infinite;
+}
+
+/* Botão "Agendar Consulta" no header */
+.cta-area .btn {
+    display: inline-block;
+    background: #25D366;
+    /* verde claro */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    /* formato mais de botão */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Hover com animação */
+.cta-area .btn:hover {
+    background: #FFD700;
+    /* amarelo */
+    color: #fff;
+    animation: pulse 1s infinite;
+}
+
+/* Reutilizando animação já criada */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 1.5s infinite;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Seção principal */
+.section {
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Grid de layout */
+.hero-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Coluna esquerda */
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-left h1,
+.hero-left p {
+    text-align: center;
+    margin: 0;
+}
+
+/* Contadores */
+.counters {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter {
+    position: relative;
+    width: 150px;
+    /* aumentei o tamanho do círculo */
+    height: 150px;
+    /* aumentei também */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Coluna direita */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fundo verde que vai até a borda direita */
+.hero-img-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100%;
+    background-color: #25D366;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    z-index: 0;
+}
+
+/* Progress rings */
+.progress-ring {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.ring-bg,
+.ring {
+    stroke-width: 16;
+    /* ou 20, se quiser bem grosso */
+}
+
+.ring-bg {
+    stroke: #e6e6e6;
+}
+
+.ring {
+    stroke: #25D366;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-linecap: round;
+}
+
+.ring-text {
+    font-size: 16px;
+    fill: #134124;
+    font-weight: 700;
+    dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* Parte 2 - Sobre */
+#sobre {
+    height: 100vh;
+    background-image: url('./imagens/fundo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgba(9, 22, 8, 0.514);
+    /* preto com 50% de transparência */
+    background-blend-mode: darken;
+    /* mistura a cor com a imagem */
+}
+
+.two-col {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    flex: 1;
+    text-align: center;
+    background: rgb(28, 94, 2);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-card h2 {
+    color: rgb(224, 224, 35);
+}
+
+.about-card img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    margin: 15px 0;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn.primary {
+    background: #2D3F31;
+    color: #fff;
+}
+
+.btn.primary.small {
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+.btn.ghost {
+    background: #ffca28;
+    /* amarelo */
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+}
+
+.btn.ghost:hover {
+    background: #ffc107;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Parte 3 - Carousel */
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: none;
+    /* não usar transições padrão */
+}
+
+.carousel-item {
+    margin-right: 10px;
+}
+
+.proc-card {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    height: 400px;
+    /* altura fixa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proc-card img {
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    object-fit: cover;
+    /* corta excesso e mantém padrão */
+    border-radius: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botões do carrossel */
+.carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2D3F31;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    z-index: 9999;
+    /* garante que fique acima de tudo */
+    pointer-events: auto;
+    /* garante que o botão receba eventos */
+    border-radius: 6px;
+}
+
+/* posições */
+.carousel .carousel-btn.prev {
+    left: 8px;
+}
+
+.carousel .carousel-btn.next {
+    right: 8px;
+}
+
+/* hover e foco — reescrevendo o transform mantendo o translateY */
+.carousel .carousel-btn:hover,
+.carousel .carousel-btn:focus {
+    background-color: #ffc107 !important;
+    /* !important apenas se estiver depurando; remova depois */
+    color: #000;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+/* Parte 4 */
+.grooming-inner {
+    text-align: center;
+}
+
+.grooming-icon {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.plan {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.small {
+    font-size: 12px;
+    color: #555;
+}
+
+.small-img {
+    max-width: 80px;
+    margin-top: 10px;
+}
+
+/* Parte 4 - Banho e Tosa */
+#banho-tosa {
+    background: #2e7d32;
+    /* verde */
+    color: #fff;
+    /* letras brancas */
+
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    padding: 80px 20px 140px;
+    overflow: hidden;
+    font-weight: 500;
+    /* todos os textos com peso médio */
+}
+
+/* Container geral */
+.grooming-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.grooming-inner h3 {
+    color: #1e2b20;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+/* Two-col: cards lado a lado */
+.two-col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Cards translúcidos */
+.card-services,
+.card-plans {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    /* translúcido */
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 260px;
+    min-height: 250px;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Títulos dentro dos cards */
+.card h3 {
+    color: #1e2b20;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    z-index: 2;
+}
+
+/* Serviços agora em parágrafos */
+.card-services p {
+    margin: 6px 0;
+    font-size: 16px;
+    font-weight: 900;
+    z-index: 2;
+}
+
+/* Planos de banho (continua como antes) */
+.card-plans .plan {
+    font-weight: bold;
+    margin: 10px 0;
+    z-index: 2;
+}
+
+.card-plans .small {
+    font-size: 10px;
+    color: rgba(231, 235, 7, 0.85);
+    z-index: 2;
+}
+
+/* Bolhas */
+.card .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* preenche todo o card */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+    transform: translateY(0);
+    will-change: transform, opacity;
+    transition: transform 1.2s ease-out, opacity 0.4s ease-out;
+    z-index: 1;
+}
+
+.bubble.animate {
+    transform: translateY(-50%);
+    /* sobe até metade do card */
+    opacity: 0.05;
+}
+
+.bubble.pop {
+    transform: scale(1.6);
+    opacity: 0;
+    transition: transform 120ms ease-out, opacity 120ms ease-out;
+}
+
+/* Botão WPP */
+#banho-tosa .btn.primary {
+    background: #ffca28;
+    /* amarelo */
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#banho-tosa .btn.primary:hover {
+    background: #ffc107;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Meia-lua para transição */
+#banho-tosa::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: #fff;
+    border-radius: 100% 100% 0 0 / 40% 40% 0 0;
+    /* forma suave */
+}
+
+/* Parte 5 */
+.testimonials-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.test-square {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 5px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    /* suaviza a animação */
+}
+
+.test-square:hover {
+    transform: scale(1.05);
+    /* aumenta um pouco ao passar o mouse */
+}
+
+.test-square img {
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.thanks {
+    text-align: center;
+    padding: 20px;
+    background: rgb(28, 94, 2);
+    color: #fff;
+    border-radius: 10px;
+}
+
+/* Footer */
+.site-footer {
+    background: #0e2510;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+    /* centraliza textos */
+}
+
+/* Centraliza conteúdos dentro de cada coluna */
+.footer-grid>div,
+.footer-grid .navegacao,
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Títulos */
+.footer-grid h4 {
+    margin-bottom: 10px;
+}
+
+/* Navegação no footer */
+.site-footer .navegacao {
+    display: flex;
+    flex-direction: column;
+    /* links um abaixo do outro */
+    gap: 10px;
+    /* espaçamento entre os links */
+}
+
+.site-footer .navegacao a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.site-footer .navegacao a:hover {
+    color: #FFD700;
+    /* amarelo */
+    transform: scale(1.1);
+    /* aumenta o tamanho */
+}
+
+/* Contato & Redes */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.socials a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.socials a img {
+    width: 20px;
+    height: 20px;
+}
+
+.socials a:hover {
+    color: #FFD700;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Mini mapa */
+.mini-map iframe {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+}
+
+/* Logo */
+.footer-logo img {
+    max-width: 300px;
+    animation: pulse 1s infinite;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ==========================
+   Reveal animations (slide-in)
+   ========================== */
+
+/* estado inicial: escondido fora da tela */
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    will-change: transform, opacity;
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(.2, .9, .3, 1);
+    transition-duration: 600ms;
+    pointer-events: auto;
+    /* mantém interação quando visível */
+}
+
+/* quando ativa: volta à posição original */
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Directional presets - translate elements OFF-SCREEN initially */
+.reveal--from-left {
+    transform: translate3d(-120%, 0, 0);
+}
+
+.reveal--from-right {
+    transform: translate3d(120%, 0, 0);
+}
+
+.reveal--from-top {
+    transform: translate3d(0, -60%, 0);
+}
+
+.reveal--from-bottom {
+    transform: translate3d(0, 60%, 0);
+}
+
+/* small screens: reduce translation so they enter nicely */
+@media (max-width: 600px) {
+
+    .reveal--from-left,
+    .reveal--from-right {
+        transform: translate3d(-60%, 0, 0);
+    }
+
+    .reveal--from-top,
+    .reveal--from-bottom {
+        transform: translate3d(0, -30%, 0);
+    }
+}
+
+/* stagger helper - JS will set inline style --delay; fallback if not set */
+.reveal {
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal.is-visible {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* =============================
+   Responsividade para celulares
+   ============================= */
+@media (max-width: 480px) {
+    /* Header */
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .main-nav {
+display: none;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    /* Hero Section */
+    .hero-grid {
+        position: relative;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 24px;
+        margin-top: 20%;
+    }
+
+    .hero-left p {
+        font-size: 16px;
+    }
+
+
+    .hero-right img {
+        max-width: 90%;
+        height: auto;
+       
+    }
+
+    .hero-img-bg {
+        display: flex;
+    position: absolute;   /* posicionamento absoluto em relação ao pai */
+    align-items: center;
+    top: 500px;            /* fixado na parte inferior */
+    left: 35px;
+    width: 80%;
+    height: 60%;          /* ocupa metade da altura do container */
+    background-color: #25D366;
+    border-radius: 10px;
+    z-index: -1;           /* atrás do conteúdo */
+    }
+   
+    /* Sobre / Cards */
+    #sobre{
+        height: auto;
+        margin-top: -10px;
+        padding: 20px;
+        background-position: center;
+    }
+    .two-col {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-card img {
+        max-width: 90%;
+    }
+
+    /* Carousel */
+    .carousel .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-item {
+        width: 330px;
+        height: 400px;
+        gap: 20px;
+    }
+
+    .proc-card img {
+        width: 200px;
+        height: 250px;
+    }
+
+    /* Banho e Tosa */
+    #banho-tosa {
+        padding: 60px 10px 150px 10px;
+    }
+
+    .grooming-inner h3 {
+        font-size: 28px;
+    }
+
+    .card-services,
+    .card-plans {
+        min-width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Testimonials */
+    .testimonials-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .test-square img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .footer-logo img {
+        max-width: 200px;
+    }
+
+    /* Botão WhatsApp flutuante */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+    }
+}
